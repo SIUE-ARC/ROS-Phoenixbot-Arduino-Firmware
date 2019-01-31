@@ -1,0 +1,7 @@
+[submodule "lib/googletest"]
+	path = lib/googletest
+	url = https://github.com/google/googletest.git
+[submodule "lib/arduino-mock"]
+	path = lib/arduino-mock
+	url = https://github.com/Zabot/arduino-mock.git
+  branch = external_gtest
