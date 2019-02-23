@@ -89,26 +89,24 @@ int handleServo(uint8_t buttonPress)
 {
   switch(buttonPress)
   {
+    //currently using pins 7, GND, Vin
     case 0:
-      pauseServo(7);
-      pauseServo(6);
+      writeServo(7,0);
+      writeServo(6,0);
       break;
     case 1:
-      writeServo(7,500);
+      writeServo(6,-250);
       break;
     case 2:
-      writeServo(7,-500);
+      writeServo(7,-250);
       break;
     case 3:
-      writeServo(6,500);
+      writeServo(7,250);
       break;
     case 4:
-      writeServo(6,-500);
+      writeServo(6,250);
       break;
-    default:
-      pauseServo(6);
-      pauseServo(7);
-      break;
+
   }
   
 }

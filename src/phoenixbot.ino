@@ -19,7 +19,7 @@
 #define BUFF_SIZE 64
 
 // FRONT RIGHT MOTOR Third From Back
-// FRONT LEFT MOTOR  4th
+// FROsNT LEFT MOTOR  4th
 // BACK RIGHT MOTOR  Farthest back
 // BACK LEFT MOTOR   Second From Back
 
@@ -61,12 +61,12 @@ void loop()
       updateEncoders(dt);
       
       float left_drive = loopPID(0, dt, encoderVelocity(LEFT_DRIVE_ENCODER), 0);
-      writeServo(LEFT_DRIVE_MOTOR_A, left_drive);
-      writeServo(LEFT_DRIVE_MOTOR_B, left_drive);
+      //writeServo(LEFT_DRIVE_MOTOR_A, left_drive);
+      //writeServo(LEFT_DRIVE_MOTOR_B, left_drive);
 
       float right_drive = loopPID(1, dt, encoderVelocity(RIGHT_DRIVE_ENCODER), 0);
-      writeServo(RIGHT_DRIVE_MOTOR_A, right_drive);
-      writeServo(RIGHT_DRIVE_MOTOR_B, right_drive);
+      //writeServo(RIGHT_DRIVE_MOTOR_A, right_drive);
+      //writeServo(RIGHT_DRIVE_MOTOR_B, right_drive);
 
 
       last_t = t;

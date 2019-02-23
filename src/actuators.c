@@ -1,4 +1,5 @@
 #define SERVO_ZERO 1500
+
 #define SERVO_RANGE 500
 
 #ifdef ARDUINO
@@ -11,10 +12,10 @@
   #include "phoenixbot/actuators.h"
 #endif
 
-//#define SERIAL_DEBUG
+#define SERIAL_DEBUG
 
 
-Servo _servos[6];
+Servo _servos[SERVO_COUNT];
 uint8_t stopped = 0;
 
 void setupServos() {

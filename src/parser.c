@@ -130,16 +130,16 @@ int parseCommand(const char* buffer)
       if (sscanf(arguments, "%hhd %hhd%n", &channel, &value, &n) != 2) return MALFORMED_COMMAND;
       if (channel < 0 || channel > SOLENOID_COUNT || value < 0 || value > 1) return MALFORMED_COMMAND;
       if (arguments[n] != '\r') return MALFORMED_COMMAND;
-      return handleSolenoid(channel, value);
+      return handleSolenoid(channel,value);
     }
-    case 'v':
     case 'V':
+    case 'v':
     {
       uint8_t buttonPress;
       // 0-3
       Serial.print("Hello");
-      if(sscanf(arguments, "%hhd%n",&buttonPress,&n) != 1); return MALFORMED_COMMAND;
-      Serial.print("hello");
+      if(sscanf(arguments, "%hhd%n",&buttonPress,&n) != 2); //return MALFORMED_COMMAND;
+      Serial.print(buttonPress);
       //if (!(buttonPress >= 0 || buttonPress < 5)) return MALFORMED_COMMAND;
       //if (arguments[n] != '\r')  return MALFORMED_COMMAND;
       return handleServo(buttonPress);
