@@ -12,7 +12,7 @@ int parseCommand(const char* buffer)
   const char command = buffer[0];
   const char* arguments = buffer + 2;
   int n;
-    
+
   switch(command)
   {
     // Analog read: A analog_channel
@@ -132,6 +132,18 @@ int parseCommand(const char* buffer)
       if (arguments[n] != '\r') return MALFORMED_COMMAND;
       return handleSolenoid(channel, value);
     }
+    case 'v':
+    case 'V':
+    {
+      uint8_t buttonPress;
+      // 0-3
+      Serial.print("Hello");
+      if(sscanf(arguments, "%hhd%n",&buttonPress,&n) != 1); return MALFORMED_COMMAND;
+      Serial.print("hello");
+      //if (!(buttonPress >= 0 || buttonPress < 5)) return MALFORMED_COMMAND;
+      //if (arguments[n] != '\r')  return MALFORMED_COMMAND;
+      return handleServo(buttonPress);
+    } 
 
     default:
       return UNKNOWN_COMMAND;

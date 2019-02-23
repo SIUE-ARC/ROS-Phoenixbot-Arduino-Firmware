@@ -84,3 +84,31 @@ int handleMotor(uint8_t channel, int value) {
   writeServo(channel, value);
   return 0;
 }
+
+int handleServo(uint8_t buttonPress)
+{
+  switch(buttonPress)
+  {
+    case 0:
+      pauseServo(7);
+      pauseServo(6);
+      break;
+    case 1:
+      writeServo(7,500);
+      break;
+    case 2:
+      writeServo(7,-500);
+      break;
+    case 3:
+      writeServo(6,500);
+      break;
+    case 4:
+      writeServo(6,-500);
+      break;
+    default:
+      pauseServo(6);
+      pauseServo(7);
+      break;
+  }
+  
+}

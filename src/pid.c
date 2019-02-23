@@ -28,7 +28,7 @@ void setKp(uint8_t channel, float value) {
 }
 void setKi(uint8_t channel, float value) {
   ki[channel] = value;
-}2
+}
 void setKd(uint8_t channel, float value) {
   kd[channel] = value;
 }

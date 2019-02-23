@@ -15,5 +15,6 @@ int handleSimon(uint8_t value);
 int handlePID(uint8_t channel, char pid_property, float value);
 int handlePWM(uint8_t channel, int value);
 int handleMotor(uint8_t channel, int value);
+int handleServo(uint8_t buttonPress);
 
 #endif
